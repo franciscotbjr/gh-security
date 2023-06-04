@@ -9,13 +9,10 @@ jobs:
     steps:
       - name: Assign label
         if: contains(github.event.issue.title, 'bug')
-        env: 
-          GT: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo $GT
           curl -X POST \
           --url https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
-          -H 'authorization: Bearer $GT' \
+          -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           -H 'content-type: application/json' \
           -d '{
               "labels": ["bug"]
