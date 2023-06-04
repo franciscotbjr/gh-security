@@ -16,4 +16,4 @@ jobs:
           -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           -H 'content-type: application/vnd.github+json' \
           -H 'X-GitHub-Api-Version: 2022-11-28' \
-          -d '{"labels":["bug"}' 
+          -d '{"labels":["bug"]}' 
